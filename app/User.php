@@ -4,6 +4,7 @@ namespace App;
 
 use App\Base\Models\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -38,6 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * @return BelongsToMany roles
+     */
     public function roles() {
         return $this->belongsToMany(Role::class)->withTimestamps();
     }
