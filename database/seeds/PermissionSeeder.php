@@ -80,5 +80,47 @@ class PermissionSeeder extends Seeder
 
         $roleAdmin->permissions()->sync($permission_all);
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        $permission = Permission::create([
+            'name' => 'list user',
+            'slug' => 'user.index',
+            'description' => 'A user can list user',
+        ]);
+
+        $permission_all[] = $permission->id;
+
+        $permission = Permission::create([
+            'name' => 'show user',
+            'slug' => 'user.show',
+            'description' => 'A user can see user',
+        ]);
+
+        $permission_all[] = $permission->id;
+
+        $permission = Permission::create([
+            'name' => 'create user',
+            'slug' => 'user.create',
+            'description' => 'A user can create user',
+        ]);
+
+        $permission_all[] = $permission->id;
+
+        $permission = Permission::create([
+            'name' => 'edit user',
+            'slug' => 'user.edit',
+            'description' => 'A user can edit user',
+        ]);
+
+        $permission_all[] = $permission->id;
+
+        $permission = Permission::create([
+            'name' => 'destroy user',
+            'slug' => 'user.destroy',
+            'description' => 'A user can destroy user',
+        ]);
+
+        $roleAdmin->permissions()->sync($permission_all);
+
     }
 }
