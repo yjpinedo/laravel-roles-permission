@@ -120,6 +120,8 @@ class PermissionSeeder extends Seeder
             'description' => 'A user can destroy user',
         ]);
 
+        $permission_all[] = $permission->id;
+
         $roleAdmin->permissions()->sync($permission_all);
 
     }
