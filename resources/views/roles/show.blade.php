@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-success text-white"><h5>{{ __('Update Roles') }}</h5></div>
+                <div class="card-header bg-success text-white"><h5>{{ __('Show Roles') }}</h5></div>
 
                 <div class="card-body">
                     @include('custom.message')
-                    <form action="{{ route('roles.update', $role) }}" method="post">
-                        @csrf @method('put')
+                    <form action="#">
+                        @csrf
                         <div class="form-group">
                             <label for="name"><strong>{{ __('Name') }}</strong></label>
                             <input 
@@ -19,6 +19,7 @@
                                 id="name" 
                                 name="name" 
                                 value="{{ old('name', $role->name) }}"
+                                readonly
                             >
                         </div>
                         <div class="form-group">
@@ -39,6 +40,7 @@
                                 id="description" 
                                 rows="3" 
                                 name="description"
+                                readonly
                                 >{{ old('description', $role->description) }}</textarea>
                         </div>
                           <hr>
@@ -51,7 +53,9 @@
                                     name="full-access" 
                                     id="inlineRadio1" 
                                     value="yes" {{ old('full-access') == 'yes' || $role['full-access'] == 'yes' ? 'checked' : ''}}
+                                    disabled
                                     >
+                                    
                                 <label 
                                     class="form-check-label" 
                                     for="inlineRadio1">
@@ -64,7 +68,9 @@
                                     type="radio" 
                                     name="full-access" 
                                     id="inlineRadio2" 
-                                    value="not" {{ old('full-access') == 'not' || $role['full-access'] == 'not' ? 'checked' : '' }}>
+                                    value="not" {{ old('full-access') == 'not' || $role['full-access'] == 'not' ? 'checked' : '' }}
+                                    disabled
+                                    >
                                 <label 
                                     class="form-check-label" 
                                     for="inlineRadio2">
@@ -77,7 +83,11 @@
                             <label for="inlineRadio1"><strong>{{ __('Permissions') }}</strong></label><br>
                             @forelse ($permissions as $key=>$permission)
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="{{ $permission->id }}" id="permissions {{ $key }}" name="permissions[]" {{ is_array(old('permissions')) && in_array($permission->id, old('permissions')) || in_array($permission->id, $permissionsRole) ? 'checked' : ''}}>
+                                    <input 
+                                        class="form-check-input" 
+                                        type="checkbox" 
+                                        value="{{ $permission->id }}" id="permissions {{ $key }}" name="permissions[]" {{ is_array(old('permissions')) && in_array($permission->id, old('permissions')) || in_array($permission->id, $permissionsRole) ? 'checked' : ''}}
+                                        disabled>
                                     <label class="form-check-label" for="permissions {{ $key }}">
                                         {{ $permission->name }}
                                         <em class="text-black-50">{ {{ $permission->description }} }</em>
@@ -90,7 +100,7 @@
                             @endforelse
                         </div>
                         <hr>
-                        <button type="submit" class="btn btn-success btn-block">{{ __('Update') }}</button>
+                        <a href="{{ route('roles.edit', $role) }}" class="btn btn-success btn-block">{{ __('Edit') }}</a>
                         <a href="{{ route('roles.index') }}" class="btn btn-secondary btn-block">{{ __('Cancel') }}</a>
                     </form>
                 </div>

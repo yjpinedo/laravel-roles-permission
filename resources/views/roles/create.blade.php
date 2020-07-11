@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name"><strong>{{ __('Slug') }}</strong></label>
-                            <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}" disabled>
+                            <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="description"><strong>{{ __('Description') }}</strong></label>
@@ -69,6 +69,21 @@
             $('#name').keyup(function () {
                $('#slug').val($('#name').val().toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
            });
+
+            $("#inlineRadio1").on("click", function() {  
+                checkboxes = document.getElementsByName('permissions[]');
+                for(var i=0, n=checkboxes.length;i<n;i++) {
+                    checkboxes[i].checked = true;
+                }
+            });
+
+            $("#inlineRadio2").on("click", function() {  
+                checkboxes = document.getElementsByName('permissions[]');
+                for(var i=0, n=checkboxes.length;i<n;i++) {
+                    checkboxes[i].checked = false;
+                }
+            });
+
         });
     </script>
 @endsection

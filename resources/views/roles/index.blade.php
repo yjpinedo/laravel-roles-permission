@@ -21,7 +21,7 @@
                                     <th scope="col">Slug</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Full Access</th>
-                                    <th colspan="3">Actions</th>
+                                    <th colspan="5">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,9 +33,12 @@
                                         <td>{{ $role->description }}</td>
                                         <td>{{ $role['full-access'] }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('roles.show', $role) }}" class="btn btn-outline-primary btn-sm">Show</a>
-                                            <a href="{{ route('roles.edit', $role) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+                                            <form action="{{ route('roles.destroy', $role->id) }}" method="POST">
+                                                @csrf @method('delete')
+                                                <a href="{{ route('roles.show', $role) }}" class="btn btn-outline-primary btn-sm">Show</a>
+                                                <a href="{{ route('roles.edit', $role) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty
