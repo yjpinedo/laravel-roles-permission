@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name"><strong>{{ __('Slug') }}</strong></label>
-                            <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}">
+                            <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}" disabled>
                         </div>
                         <div class="form-group">
                             <label for="description"><strong>{{ __('Description') }}</strong></label>
@@ -54,10 +54,21 @@
                         </div>
                         <hr>
                         <button type="submit" class="btn btn-success btn-block">{{ __('Send') }}</button>
+                        <a href="{{ route('roles.index') }}" class="btn btn-secondary btn-block">{{ __('Cancel') }}</a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(function() {
+            $('#name').keyup(function () {
+               $('#slug').val($('#name').val().toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
+           });
+        });
+    </script>
 @endsection

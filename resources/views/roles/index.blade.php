@@ -34,7 +34,7 @@
                                         <td>{{ $role['full-access'] }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('roles.show', $role) }}" class="btn btn-outline-primary btn-sm">Show</a>
-                                            <a href="{{ route('roles.show', $role) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
+                                            <a href="{{ route('roles.edit', $role) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
                                             <a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
