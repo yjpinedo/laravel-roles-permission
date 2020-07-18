@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Base\Models\Role;
+use App\Base\Traits\UserTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, UserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -38,11 +39,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    /**
-     * @return BelongsToMany roles
-     */
-    public function roles() {
-        return $this->belongsToMany(Role::class)->withTimestamps();
-    }
 }

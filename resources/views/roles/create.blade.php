@@ -70,19 +70,19 @@
                $('#slug').val($('#name').val().toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
            });
 
-            $("#inlineRadio1").on("click", function() {  
+            /*$("#inlineRadio1").on("click", function() {
                 checkboxes = document.getElementsByName('permissions[]');
                 for(var i=0, n=checkboxes.length;i<n;i++) {
                     checkboxes[i].checked = true;
                 }
             });
 
-            $("#inlineRadio2").on("click", function() {  
+            $("#inlineRadio2").on("click", function() {
                 checkboxes = document.getElementsByName('permissions[]');
                 for(var i=0, n=checkboxes.length;i<n;i++) {
                     checkboxes[i].checked = false;
                 }
-            });
+            });*/
 
         });
     </script>
