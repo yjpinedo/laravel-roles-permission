@@ -2,10 +2,8 @@
 
 namespace App;
 
-use App\Base\Models\Role;
 use App\Base\Traits\UserTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 

@@ -7,7 +7,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Base\Models\Permission;
 use App\Base\Models\Role;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class RoleController extends Controller
