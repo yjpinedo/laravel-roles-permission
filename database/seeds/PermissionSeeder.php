@@ -40,7 +40,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'list role',
-            'slug' => 'role.index',
+            'slug' => 'roles.index',
             'description' => 'A user can list role',
         ]);
 
@@ -48,7 +48,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'show role',
-            'slug' => 'role.show',
+            'slug' => 'roles.show',
             'description' => 'A user can see role',
         ]);
 
@@ -56,7 +56,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'create role',
-            'slug' => 'role.create',
+            'slug' => 'roles.create',
             'description' => 'A user can create role',
         ]);
 
@@ -64,7 +64,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'edit role',
-            'slug' => 'role.edit',
+            'slug' => 'roles.edit',
             'description' => 'A user can edit role',
         ]);
 
@@ -72,7 +72,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'destroy role',
-            'slug' => 'role.destroy',
+            'slug' => 'roles.destroy',
             'description' => 'A user can destroy role',
         ]);
 
@@ -84,7 +84,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'list user',
-            'slug' => 'user.index',
+            'slug' => 'users.index',
             'description' => 'A user can list user',
         ]);
 
@@ -92,7 +92,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'show user',
-            'slug' => 'user.show',
+            'slug' => 'users.show',
             'description' => 'A user can see user',
         ]);
 
@@ -100,7 +100,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'create user',
-            'slug' => 'user.create',
+            'slug' => 'users.create',
             'description' => 'A user can create user',
         ]);
 
@@ -108,7 +108,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'edit user',
-            'slug' => 'user.edit',
+            'slug' => 'users.edit',
             'description' => 'A user can edit user',
         ]);
 
@@ -116,7 +116,7 @@ class PermissionSeeder extends Seeder
 
         $permission = Permission::create([
             'name' => 'destroy user',
-            'slug' => 'user.destroy',
+            'slug' => 'users.destroy',
             'description' => 'A user can destroy user',
         ]);
 

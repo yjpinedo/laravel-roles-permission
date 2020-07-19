@@ -17,15 +17,15 @@ trait UserTrait {
     public function havePermission ($permissions) {
         foreach ($this->roles as $role) {
             if ($role['full-access'] == 'yes') {
-                return 'true';
+                return true;
             }
             foreach ($role->permissions as $permission) {
                 if ($permission->slug == $permissions) {
-                    return 'true';
+                    return true;
                 }
             }
         }
-        return 'false';
+        return false;
     }
 
 }
